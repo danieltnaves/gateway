@@ -1,0 +1,12 @@
+server:
+  port: 8383
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: websocket_route
+          uri: ws://localhost:8080/ws  
+          predicates:
+            - Path=/ws/**
+
